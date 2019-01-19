@@ -15,15 +15,18 @@ const instructions = Platform.select({
     'Double tap R on your keyboard to reload,\n' +
     'Shake or press menu button for dev menu',
 });
+ const test:number = '1';
+ function double(n:number):number{
+   return n*2;
+ }
 
 type Props = {};
 export default class App extends Component<Props> {
   render() {
+    const result = double(test)
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>Welcome to React Native!</Text>
-        <Text style={styles.instructions}>To get started, edit App.js</Text>
-        <Text style={styles.instructions}>{instructions}</Text>
+        <Text style={styles.welcome}>{result}</Text>
       </View>
     );
   }
