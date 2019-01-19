@@ -27,7 +27,10 @@ export class AddTodo extends Component {
     return (
       <View style={styles.view}>
         <TextInput value={this.state.text} onChangeText={this.onTextInput} style={styles.input}/>
-        <Button title="Add" onPress={() => this.addTodo()} style={styles.button}/>
+        <View style={styles.button}>
+        <Button title="Add" onPress={() => this.addTodo()} />
+        </View>
+       
       </View>
     )
   }

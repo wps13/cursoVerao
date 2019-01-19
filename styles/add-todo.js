@@ -2,15 +2,22 @@ import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
     input:{
-        width:"50%",
-    },
-    view:{
+        width:"80%",
+        borderWidth:2,
+        borderColor:'gray',
+        borderRadius:10,
+        margin:5,
         backgroundColor:'#d0d4db',
-        flexDirection:'row',
         height:40
     },
+    view:{
+        flexDirection:'row',
+        padding:15,
+    },
     button:{
-        backgroundColor:'black',
+        height:20,
+        justifyContent:'center',
+        marginTop:15
     }
 })
 
