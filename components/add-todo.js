@@ -16,11 +16,18 @@ export class AddTodo extends Component {
       text
     })
   }
+
+  addTodo(){
+    this.props.add(this.state.text)
+    this.setState(
+      {text:''}
+    )
+  }
   render() {
     return (
       <View style={styles.view}>
         <TextInput value={this.state.text} onChangeText={this.onTextInput} style={styles.input}/>
-        <Button title="Add" onPress={() => this.props.add(this.state.text)} style={styles.button}/>
+        <Button title="Add" onPress={() => this.addTodo()} style={styles.button}/>
       </View>
     )
   }
