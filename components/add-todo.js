@@ -1,14 +1,29 @@
-import React, { Component } from 'react'
-import { Text, View } from 'react-native'
+import React, { Component } from 'react';
+import { Button, TextInput, View } from 'react-native';
+import styles from '../styles/add-todo';
 
-export class componentName extends Component {
+export class AddTodo extends Component {
+  constructor(props) {
+    super(props)
+  
+    this.state = {
+       text:''
+    }
+  }
+  
+  onTextInput = (text) => {
+    this.setState({
+      text
+    })
+  }
   render() {
     return (
-      <View>
-        <Text> textInComponent </Text>
+      <View style={styles.view}>
+        <TextInput value={this.state.text} onChangeText={this.onTextInput} style={styles.input}/>
+        <Button title="Add" onPress={() => this.props.add(this.state.text)} style={styles.button}/>
       </View>
     )
   }
 }
 
-export default componentName
+export default AddTodo;

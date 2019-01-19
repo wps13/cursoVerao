@@ -1,15 +1,17 @@
-import React, { Component } from 'react'
-import { Text, View } from 'react-native'
+import React, { Component } from 'react';
+import { Text, View } from 'react-native';
+import styles from '../styles/todoStyle';
 
-export class componentName extends Component {
+
+export class Todo extends Component {
   render() {
     return (
-      <View>
-        <Text> textInComponent </Text>
+      <View styles={styles.box}>
+        <Text style={styles.text}> {this.props.text} </Text>
       </View>
     )
   }
 }
 
 
-export default componentName
+export default Todo;

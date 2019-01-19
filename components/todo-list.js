@@ -1,14 +1,17 @@
-import React, { Component } from 'react'
-import { Text, View } from 'react-native'
+import React, { Component } from 'react';
+import { View } from 'react-native';
+import Todo from './todo';
 
-export class componentName extends Component {
+export class TodoList extends Component {
   render() {
     return (
       <View>
-        <Text> textInComponent </Text>
+       {this.props.todoList.map( todo => (
+         <Todo text={todo.text} />
+       ))}
       </View>
     )
   }
 }
 
-export default componentName
+export default TodoList;
