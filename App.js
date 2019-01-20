@@ -76,7 +76,7 @@ class App extends Component {
         })
       }
       else{
-        throw data.status
+        throw JSON.stringify(data)
       }
 
     }
