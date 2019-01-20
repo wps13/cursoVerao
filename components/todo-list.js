@@ -8,9 +8,9 @@ export class TodoList extends Component {
   render() {
     return (
       <View style={styles.container}>
-       {this.props.todoList.map( todo => (
-         <Todo navigate={this.props.navigate} text={todo.text} />
-       ))}
+        {this.props.todoList.map(todo => (
+          <Todo navigate={this.props.navigate} text={todo.text} />
+        ))}
       </View>
     )
   }

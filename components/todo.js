@@ -4,7 +4,7 @@ import styles from '../styles/todoStyle';
 
 
 export class Todo extends Component {
-  constructor(props){
+  constructor(props) {
     super(props);
 
   }
@@ -12,7 +12,7 @@ export class Todo extends Component {
     return (
       <TouchableNativeFeedback onPress={() => {
         this.props.navigate.navigate('TodoDetails')
-      }} 
+      }}
       >
         <View style={styles.box}>
           <Text style={styles.text}> {this.props.text} </Text>
