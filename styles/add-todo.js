@@ -8,16 +8,15 @@ const styles = StyleSheet.create({
         borderRadius:10,
         margin:5,
         backgroundColor:'#d0d4db',
-        height:40
+        height:40,
     },
     view:{
         flexDirection:'row',
         padding:15,
     },
     button:{
-        height:20,
+        height:50,
         justifyContent:'center',
-        marginTop:15
     }
 })
 
