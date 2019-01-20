@@ -6,7 +6,7 @@ import styles from '../styles/todoStyle';
 export class Todo extends Component {
   render() {
     return (
-      <View styles={styles.box}>
+      <View style={styles.box}>
         <Text style={styles.text}> {this.props.text} </Text>
       </View>
     )

@@ -3,11 +3,11 @@ import { StyleSheet } from 'react-native';
 const styles = StyleSheet.create({
     input:{
         width:"80%",
-        borderWidth:2,
-        borderColor:'gray',
+        borderWidth:1,
+        borderColor:'#74777c',
         borderRadius:10,
         margin:5,
-        backgroundColor:'#d0d4db',
+        backgroundColor:'white',
         height:40,
     },
     view:{
