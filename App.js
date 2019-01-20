@@ -65,7 +65,7 @@ class App extends Component {
         `https://maps.googleapis.com/maps/api/geocode/json?latlng=${latitude},${longitude}&key=${500}`
       )
       const data = await response.json()
-      if (data.results.formatted_address) {
+      if (!data.error_message) {
         const address = data.results.formatted_address;
         const { todos } = this.state;
         todos
