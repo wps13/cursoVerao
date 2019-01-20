@@ -26,7 +26,9 @@ export class AddTodo extends Component {
   render() {
     return (
       <View style={styles.view}>
-        <TextInput value={this.state.text} onChangeText={this.onTextInput} style={styles.input}/>
+        <TextInput value={this.state.text} onChangeText={this.onTextInput} 
+        style={styles.input} maxLength={30}
+        />
         <View style={styles.button}>
         <Button color='black' title="Add" onPress={() => this.addTodo()} />
         </View>
