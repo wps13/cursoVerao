@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import { View } from 'react-native';
 import styles from './Styles';
 import TodoList from './components/todo-list';
-import addTodo, { AddTodo } from './components/add-todo';
+import AddTodo  from './components/add-todo';
 
 class App extends Component{
   constructor(){
