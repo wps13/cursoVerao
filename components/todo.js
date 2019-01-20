@@ -15,7 +15,7 @@ export class Todo extends Component {
       }}
       >
         <View style={styles.box}>
-          <Text style={styles.text}> {this.props.text} </Text>
+          <Text style={styles.text}> {this.props.todo.text} </Text>
         </View>
       </TouchableNativeFeedback>
 

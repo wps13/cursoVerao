@@ -30,13 +30,13 @@ class TodoDetails extends Component {
   }
 }
 
-
 class App extends Component {
 
   constructor(props) {
     super(props);
     this.state = {
       todos: [],
+      idCount: 0,
       isGranted: ''
     }
     this.requestMapsPermission()
@@ -55,7 +55,33 @@ class App extends Component {
       })
     }
     catch (err) {
-      return;
+      console.warn(err)
+    }
+  }
+  async setTodoLocation(id, coords) {
+    const { latitude, longitude } = coords;
+    try {
+      const response = await fetch(
+        `https://maps.googleapis.com/maps/api/geocode/json?latlng=${latitude},${longitude}&key=${500}`
+      )
+      const data = await response.json()
+      if (data.results.formatted_address) {
+        const address = data.results.formatted_address;
+        const { todos } = this.state;
+        todos
+          .find(todo => todo.id === id)
+          .location = address;
+        this.setState({
+          todos
+        })
+      }
+      else{
+        throw data.status
+      }
+
+    }
+    catch (error) {
+      console.error(error)
     }
   }
 
@@ -65,10 +91,16 @@ class App extends Component {
       todos: [{ id, text }].concat(this.state.todos),
       idCount: id
     })
+
+    if (this.state.geolocationPermissionGranted) {
+      navigator.geolocation.getCurrentPosition((pos) => {
+        this.setTodoLocation(id, pos.coords)
+      }, null, { enableHighAccuracy: true }
+      )
+    }
   }
 
   render() {
-    console.warn(this.state.isGranted)
     return (
       <View style={styles.container}>
         <AddTodo add={text => this.addTodo(text)} />
