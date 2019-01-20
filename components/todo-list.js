@@ -4,11 +4,12 @@ import Todo from './todo';
 import styles from '../styles/todo-list'
 
 export class TodoList extends Component {
+
   render() {
     return (
       <View style={styles.container}>
        {this.props.todoList.map( todo => (
-         <Todo text={todo.text} />
+         <Todo navigate={this.props.navigate} text={todo.text} />
        ))}
       </View>
     )
