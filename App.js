@@ -62,11 +62,11 @@ class App extends Component {
     const { latitude, longitude } = coords;
     try {
       const response = await fetch(
-        `https://maps.googleapis.com/maps/api/geocode/json?latlng=${latitude},${longitude}&key=${500}`
+        `https://maps.googleapis.com/maps/api/geocode/json?latlng=${latitude},${longitude}&key=${API_KEY}`
       )
       const data = await response.json()
       if (!data.error_message) {
-        const address = data.results.formatted_address;
+        const address = data.results[0].formatted_address;
         const { todos } = this.state;
         todos
           .find(todo => todo.id === id)
